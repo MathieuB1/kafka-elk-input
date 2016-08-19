@@ -10,7 +10,7 @@
 
     `sudo pip install docker-compose`
 
-  3. Change the ip-address in KAFKA_ADVERTISED_HOST_NAME to ip-address of your machine, remember that `localhost` DOES NOT work for some reason.
+  3. Change the ip-address in the `docker-compose.yml` file in sub-section `KAFKA_ADVERTISED_HOST_NAME` to ip-address of your machine, remember that `localhost` DOES NOT work for some reason.
 
   4. Create/Build the images using docker-compose:
 
