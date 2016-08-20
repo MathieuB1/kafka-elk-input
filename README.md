@@ -12,6 +12,10 @@
 
   3. Change the ip-address in KAFKA_ADVERTISED_HOST_NAME to ip-address of your machine, remember that `localhost` DOES NOT work for some reason.
 
+    Can also work with something like this:
+
+    `docker run --rm debian:latest ip route | awk '/^default via / { print $3 }'`
+
   4. Create/Build the images using docker-compose:
 
     `docker-compose up`
