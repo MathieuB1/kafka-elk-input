@@ -1,7 +1,12 @@
 version: '2'
 services:
+  zookeeper:
+    image: confluent/zookeeper
+    ports:
+      - "2181:2181"
+    container_name: zookeeper_local
   kafka:
-    image: confluent/kafka:0.9.0.0-cp1
+    image: confluent/kafka
     environment:
       - KAFKA_ADVERTISED_HOST_NAME=<YOUR_HOST_IP>
     ports:
@@ -11,11 +16,6 @@ services:
     depends_on:
       - zookeeper
     container_name: kafka_local
-  zookeeper:
-    image: confluent/zookeeper
-    ports:
-        - "2181:2181"
-    container_name: zookeeper_local
   elk:
     build: .
     image: elk_kafka:latest
